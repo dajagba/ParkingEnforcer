@@ -10,6 +10,7 @@
     "e2e": "protractor",
     "preinstall": "npm install -g node server.js",
     "postinstall": "ng build --aot -prod"
+    
   },
   "private": true,
   "dependencies": {
@@ -73,5 +74,8 @@
   "engines": {
     "node": "8.11.0",
     "npm": "5.6.0"
+  },
+  "paths": {
+    "public": "assets"
   }
 }
