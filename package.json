@@ -10,7 +10,6 @@
     "e2e": "protractor",
     "preinstall": "npm install -g node server.js",
     "postinstall": "ng build --aot -prod"
-    
   },
   "private": true,
   "dependencies": {
@@ -30,6 +29,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.1.0",
     "codelyzer": "^4.0.1",
     "core-js": "^2.4.1",
@@ -41,6 +41,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "mongoose": "^5.0.16",
     "ng-bootstrap": "^1.6.3",
     "path": "^0.12.7",
     "protractor": "~5.1.2",
