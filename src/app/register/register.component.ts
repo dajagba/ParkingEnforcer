@@ -5,8 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
+  providers: [ AuthenticationService ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
+
 })
 export class RegisterComponent implements OnInit {
   ngOnInit() {
@@ -24,7 +26,7 @@ export class RegisterComponent implements OnInit {
   
     register() {
       this.auth.register(this.credentials).subscribe(() => {
-        this.router.navigateByUrl('/profile');
+        this.router.navigateByUrl('/dashboard');
       }, (err) => {
         console.error(err);
       });
