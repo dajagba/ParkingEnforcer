@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload } from '../authentication.service';
 import { Router } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -12,10 +12,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
     credentials: TokenPayload = {
-      email: '',
-      name: '',
-      password: ''
-    };
+      username: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      studentID: null
+      
+    };  
   
     constructor(private auth: AuthenticationService, private router: Router) {}
   
@@ -28,3 +31,4 @@ export class RegisterComponent implements OnInit {
  
 
   }
+}

@@ -8,7 +8,7 @@ const Schema = mongoose.Schema
 const userSchema = new Schema ({
     username:
     {
-        type: string, 
+        type: String, 
         unique: true, 
         required: true
     },
@@ -24,12 +24,12 @@ const userSchema = new Schema ({
     },
     studentID:
     {
-        type: int,
+        type: Number,
         required: true
     },
     role: 
     {
-        type:boolean,
+        type:Boolean,
         default: false
     },
     hash: String,

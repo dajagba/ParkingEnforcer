@@ -2,7 +2,7 @@
 
 const express = require('express')
 const router = express.Router()
-const User = require('./models/user')
+const User = require('../models/user')
 
 
 //To ensure only registered users are able to access the dashboard 
@@ -13,7 +13,17 @@ var auth = jwt({
 });
 
 /*************** API Calls  *********/
-router.get('/dashboard', auth, ctrlProfile.profileRead);
+var ctrlProfile = require('../controllers/profile');
+var ctrlAuth = require('../controllers/authentication');
+
+// profile
+router.get('/profile', auth, ctrlProfile.profileRead);
+
+// authentication
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
+
+
 
 
 router.get('/',(req,res) => {
