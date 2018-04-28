@@ -1,3 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<!-- <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
+        <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
+        <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
+        </ul> -->
 
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a class="navbar-brand d-none d-sm-block " routerLink="" routerLinkActive="active" style="display: inline-block;" id="navbar3SupportedContent" [ngbCollapse]="isCollapsed">
+                        <img src="assets\homeicon.png" style="margin-bottom: 5px;">
+                        <span style="display: inline-block;">Home</span>
+                      </a>
+               
+                <div class="container-fluid">
+                  <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> -->
+                  <button class="navbar-toggler btn btn-outline-primary " type="button" data-toggle="collapse" data-target="#navbar3SupportedContent"  aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbar3SupportedContent">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                
+                  <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent" [ngbCollapse]="isCollapsed">
+                    <ul class="navbar-nav">
+                        <button class="link">
+                            <li class="nav-item d-block d-sm-none "  routerLink="" routerLinkActive="active">
+                                    <a class="nav-link" >Home</a>
+                            </li>
+                        </button>
+                      <li class="nav-item">
+                        <a class="nav-link" href="https://kennesaw.t2hosted.com/cmn/auth_ext.aspx">KSU Parking Portal</a>
+                      </li>
+           
+                    <a class="ml-5 btn navbar-btn btn-primary " routerLink="login">Login Portal</a>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
 <router-outlet></router-outlet>
