@@ -1,8 +1,9 @@
 <body class="bg-secondary section-dark-opaque" style="background-image: url('assets/Header.png');">
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"  aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> 
+      </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent" [ngbCollapse]="isCollapsed">
         <a class="ml-3 btn navbar-btn btn-primary" routerLink="">Return To Home</a>
       </div>
     </div>

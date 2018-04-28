@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   
 })
 export class LoginComponent implements OnInit {
+  isCollapsed = false;
   ngOnInit() {}
 
   credentials: TokenPayload = {
