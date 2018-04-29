@@ -34,11 +34,11 @@
                                     <a class="nav-link" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
                             </li>
                         </button>
-                    <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
-                    <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
                     </ul>
                   </div>
                   <a class="btn navbar-btn ml-2 text-white btn-dark" *ngIf="auth.isLoggedIn()" routerLink="/profile" ><i class="fa d-inline fa-lg fa-user-circle-o"></i>{{ auth.getUserDetails()?.firstName }} {{ auth.getUserDetails()?.lastName }}</a>
+                    <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
+                    <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
                 </div>
               </nav>
 <router-outlet></router-outlet>
