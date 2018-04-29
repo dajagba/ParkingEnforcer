@@ -3,6 +3,8 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
+const vehiclesinlot = require('../models/vehiclesInLot')
+var mongoose = require('mongoose');
 
 
 //To ensure only registered users are able to access the dashboard 
@@ -15,6 +17,7 @@ var auth = jwt({
 /*************** API Calls  *********/
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
+const ctrlDash  = require('../controllers/dashboard')
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -31,6 +34,8 @@ router.get('/',(req,res) => {
 } )
 
 
+/***** For Dashboard */
+router.get('/vehiclesinlot',ctrlDash.getVehicles)
 
 
 module.exports = router 
