@@ -4,6 +4,7 @@ import { LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
 
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuardService]
   },
   
   {
@@ -31,5 +33,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-})
+}
+
+)
 export class AppRoutingModule { }
