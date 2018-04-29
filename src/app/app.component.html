@@ -10,7 +10,7 @@
                         <img src="assets\homeicon.png" style="margin-bottom: 5px;">
                         <span style="display: inline-block;">Home</span>
                       </a>
-               
+                      <a class="btn navbar-btn ml-2 text-white btn-dark" *ngIf="auth.isLoggedIn()" routerLink="/dashboard" ><i class="fa d-inline fa-lg fa-user-circle-o"></i>Dashboard</a>
                 <div class="container-fluid">
                   <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> -->
                   <button class="navbar-toggler btn btn-outline-primary " type="button" data-toggle="collapse" data-target="#navbar3SupportedContent"  aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbar3SupportedContent">
@@ -34,9 +34,6 @@
                                     <a class="nav-link" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
                             </li>
                         </button>
-                        <li>
-                          <a class="btn navbar-btn ml-2 text-white btn-dark"><i class="fa d-inline fa-lg fa-user-circle-o"></i>First Last</a>
-                        </li>
                     <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
                     <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
                     </ul>
