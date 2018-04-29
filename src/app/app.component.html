@@ -28,13 +28,13 @@
                       <li class="nav-item">
                         <a class="nav-link" href="https://kennesaw.t2hosted.com/cmn/auth_ext.aspx">KSU Parking Portal</a>
                       </li>
-                      <li>
-                        <a class="btn navbar-btn ml-2 text-white btn-dark"><i class="fa d-inline fa-lg fa-user-circle-o"></i>John Doe</a>
-                      </li>
                       <button class="link ">
                             <li class="nav-item d-block d-sm-none ">
                                     <a class="nav-link" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
                                     <a class="nav-link" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
+                            </li>
+                            <li>
+                              <a class="btn navbar-btn ml-2 text-white btn-dark"><i class="fa d-inline fa-lg fa-user-circle-o"></i>First Last</a>
                             </li>
                         </button>
                     <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
