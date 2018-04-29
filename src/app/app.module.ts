@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AuthenticationService } from './authentication.service';
-
+import { AuthGuardService } from './auth-guard.service';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
@@ -33,7 +33,10 @@ import { RegisterComponent } from './register/register.component';
     NgbModule.forRoot(),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService, 
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
