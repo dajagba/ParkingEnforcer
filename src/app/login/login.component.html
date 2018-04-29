@@ -6,7 +6,7 @@
           <form class="" (submit)="login()">
             <div class="form-group"> <label for="inputUsername">Username</label>
               <input type="username" class="form-control" name="username" [(ngModel)]="credentials.username" id="inputUsername" aria-describedby="usernameHelp" placeholder="Enter Username" > 
-                <small id="registerhelp" class="form-text text-primary"> <a  class="form-text text-primary" routerLink="/register"> New User? Register Here.</a></small> </div>
+                <small id="registerhelp" class="form-text text-primary"> <a  class="form-text text-primary" style="color: #fff;" routerLink="/register"> New User? Register Here.</a></small> </div>
               <div class="form-group"> <label for="password">Password</label>
               <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter Password" [(ngModel)]="credentials.password"> </div>
               <button type="submit" class="btn btn-primary" >Login</button>
