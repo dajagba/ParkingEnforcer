@@ -20,16 +20,22 @@
                 
                   <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent" [ngbCollapse]="isCollapsed">
                     <ul class="navbar-nav">
-                        <button class="link">
-                            <li class="nav-item d-block d-sm-none "  routerLink="" routerLinkActive="active">
-                                    <a class="nav-link" >Home</a>
+                        <button class="link ">
+                            <li class="nav-item d-block d-sm-none nav-link "  >
+                                    <a class="nav-link" routerLink="" routerLinkActive="active" >Home</a>
                             </li>
                         </button>
                       <li class="nav-item">
                         <a class="nav-link" href="https://kennesaw.t2hosted.com/cmn/auth_ext.aspx">KSU Parking Portal</a>
                       </li>
-           
-                    <a class="ml-5 btn navbar-btn btn-primary " routerLink="login">Login Portal</a>
+                      <button class="link ">
+                            <li class="nav-item d-block d-sm-none ">
+                                    <a class="nav-link" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
+                                    <a class="nav-link" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
+                            </li>
+                        </button>
+                    <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" *ngIf="!auth.isLoggedIn()">Login</a>
+                    <a class="ml-5 btn navbar-btn btn-primary d-none d-sm-block" routerLink="login" (click)="auth.logout()" *ngIf="auth.isLoggedIn()">Logout</a>
                     </ul>
                   </div>
                 </div>
