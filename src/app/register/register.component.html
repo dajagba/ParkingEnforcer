@@ -13,7 +13,7 @@
               <button class="btn btn-danger text-center" routerLink=''>Back to Homepage</button>
           </div>
             
-          <form (submit)="register()">
+          <form name="register" (submit)="register()">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" name= "username" class="form-control" id="username" placeholder="Enter Username" [(ngModel)]="credentials.username">
@@ -31,7 +31,8 @@
             </div>
             <div class="form-group">
                 <label for="studentID">KSU ID</label>
-                <input type="number" name="studentID"class="form-control" name="studentID" placeholder="Enter your KSUID" [(ngModel)]="credentials.studentID">
+                <h1 ng-if="!register.studentID.$valid">Please Input a Valid ID</h1>
+                <input type="number" name="studentID"class="form-control" name="studentID" placeholder="Enter your KSUID" [(ngModel)]="credentials.studentID" ng-maxlength="8" ng-minlength="8">
               </div>
 
             <button type="submit" class="btn btn-success btn-block" >Register!</button>
