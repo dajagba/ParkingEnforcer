@@ -19,7 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
+import { DataTablesModule } from 'angular-datatables';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -38,11 +39,13 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     HttpModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    DataTablesModule,
+    HttpClientModule
   ],
   providers: [
     AuthenticationService, 
-    AuthGuardService
+    AuthGuardService,DataService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,16 +12,7 @@
                       
                               <!-- Card header -->
                               <div class="card-header" role="tab" id="headingUnfiled">
-                      
-                                  <!--Options-->
-                                  <div class="dropdown pull-left">
-                                      <div class="dropdown-menu dropdown-info">
-                                          <a class="dropdown-item" href="#">Add new condition</a>
-                                          <a class="dropdown-item" href="#">Rename folder</a>
-                                          <a class="dropdown-item" href="#">Delete folder</a>
-                                      </div>
-                                  </div>
-                      
+                                
                                   <!-- Heading -->
                                   <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled" aria-expanded="true" aria-controls="collapseUnfiled">
                                       <h5 class="mt-1 mb-0">
@@ -46,13 +37,13 @@
                                               <div class="col-xl-4 col-lg-6 col-md-12">
                       
                                                   <!--Name-->
-                                                  <select class="mdb-select colorful-select dropdown-info mx-2">
+                                                  <!-- <select class="mdb-select colorful-select dropdown-info mx-2">
                                                       <option value="" disabled selected>Bulk actions</option>
                                                       <option value="1">Delete</option>
                                                       <option value="2">Give Ticket</option>
                                                       <option value="3">Remove Ticket</option>
 
-                                                  </select>
+                                                  </select> -->
                       
                                               </div>
                                               <!--Grid column-->
@@ -61,16 +52,16 @@
                                               <div class="col-xl-4 col-lg-6 col-md-6">
                       
                                                   <!--Blue select-->
-                                                  <select class="mdb-select colorful-select dropdown-info mx-2">
+                                                  <!-- <select class="mdb-select colorful-select dropdown-info mx-2">
                                                       <option value="" disabled>Show only</option>
-                                                      <option value="1" selected>All <span> (2000)</span></option>
-                                                      <option value="2">Clicks <span> (200)</span></option>
-                                                      <option value="3">Page <span> (1800)</span></option>
-                                                      <option value="4">Scroll <span> (200)</span></option>
-                                                      <option value="5">Forms <span> (50)</span></option>
-                                                      <option value="6">Time <span> (50)</span></option>
-                                                      <option value="7">UTM <span> (50)</span></option>
-                                                  </select>
+                                                      <option value="1" selected>All </option>
+                                                      <option value="2">5</option>
+                                                      <option value="3">10 </option>
+                                                      <option value="4">15 </option>
+                                                      <option value="5">20 </option>
+                                                      <option value="6">25 </option>
+                                                      <option value="7">30 </option>
+                                                  </select> -->
                                                   <!--/Blue select-->
                       
                                               </div>
@@ -80,12 +71,12 @@
                                               <div class="col-xl-4 col-lg-6 col-md-6">
                       
                                                   <!--Blue select-->
-                                                  <select class="mdb-select colorful-select dropdown-info mx-2">
+                                                  <!-- <select class="mdb-select colorful-select dropdown-info mx-2">
                                                       <option value="" disabled selected>Filter</option>
-                                                      <option value="1">All <span> (100)</span></option>
-                                                      <option value="1">Active <span> (2000)</span></option>
-                                                      <option value="2">Inactive <span> (1000)</span></option>
-                                                  </select>
+                                                      <option value="1">Time Entered</option>
+                                                      <option value="1">Registered </option>
+                                                      <option value="2">Ticketed </option>
+                                                  </select> -->
                                                   <!--/Blue select-->
                       
                                               </div>
@@ -99,11 +90,33 @@
                       
                                       <!-- Table responsive wrapper -->
                                       <div class="table-responsive mx-3">
+                                            <table datatable class="row-border hover">
+                                                    <thead>
+                                                      <tr>
+                                                        <th>ID</th>
+                                                        <th>First name</th>
+                                                        <th>Last name</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr *ngFor="let status of AllStatus">
+                                                        <td>{{ status.plate }}</td>
+
+                                                      </tr>
+                                                    </tbody>
+                                                    </table>
+
+
+
+
+
+                                        
+
                                           <!--Table-->
-                                          <table class="table table-hover mb-0">
+                                          <!-- <table class="table table-hover mb-0"> -->
                       
                                               <!--Table head-->
-                                              <thead>
+                                              <!-- <thead>
                                                   <tr>
                                                       <th>
                                                           <input type="checkbox" id="checkbox">
@@ -115,11 +128,11 @@
                                                       <th class="th-lg"><a>Ticketed<i class="fa fa-sort ml-1"></i></a></th>
                                                       <th></th>
                                                   </tr>
-                                              </thead>
+                                              </thead> -->
                                               <!--Table head-->
                       
                                               <!--Table body-->
-                                              <tbody>
+                                              <!-- <tbody>
                                                   <tr>
                                                       <th scope="row">
                                                           <input type="checkbox" id="checkbox1">
@@ -134,37 +147,10 @@
                                                           <a><i class="fa fa-times mx-1"></i></a>
                                                       </td>
                                                   </tr>
-                                                  <tr>
-                                                      <th scope="row">
-                                                          <input type="checkbox" id="checkbox2">
-                                                          <label for="checkbox2" class="label-table"></label>
-                                                      </th>
-                                                      <td>Product Hunt Visitor</td>
-                                                      <td><code>Scroll %</code> equals or greater than <strong>80</strong></td>
-                                                      <td>13.06.2017</td>
-                                                      <td>
-                                                          <a><i class="fa fa-info mx-1" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i></a>
-                                                          <a><i class="fa fa-pencil-square mx-1"></i></a>
-                                                          <a><i class="fa fa-times mx-1"></i></a>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <th scope="row">
-                                                          <input type="checkbox" id="checkbox3">
-                                                          <label for="checkbox3" class="label-table"></label>
-                                                      </th>
-                                                      <td>Test subscription</td>
-                                                      <td><code>Scroll %</code> equals or greater than <strong>80</strong></td>
-                                                      <td>12.06.2017</td>
-                                                      <td>
-                                                          <a><i class="fa fa-info mx-1" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i></a>
-                                                          <a><i class="fa fa-pencil-square mx-1"></i></a>
-                                                          <a><i class="fa fa-times mx-1"></i></a>
-                                                      </td>
-                                                  </tr>
-                                              </tbody>
+
+                                              </tbody> -->
                                               <!--Table body-->
-                                          </table>
+                                          <!-- </table> -->
                                           <!--Table-->
                                       </div>
                                       <!-- Table responsive wrapper -->
