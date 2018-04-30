@@ -15,6 +15,7 @@ module.exports.getVehiclesInLot = function (req, res) {
     });
 };
 
+//Get a list of all vehicles that matche the passed lotName
 module.exports.getVehiclesInLotByLot = function (req, res) {
     vehiclesInLot.find({lotName: req.params.lot},function (err, vehiclesinlot) {
         res.send(vehiclesinlot);
@@ -74,7 +75,7 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                     lotName: req.params.lot,
                     make: vehicle.make,
                     model: vehicle.model,
-                    studentID: vehicle.studentID
+                    studentID: 0000+ vehicle.studentID
                 }, function(err,createdVehicle){
                     if(err){
                         console.log("MongoDB Error When Creating: " + err);
@@ -94,7 +95,7 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                     lotName: req.params.lot,
                     make: vehicle.make,
                     model: vehicle.model,
-                    studentID: vehicle.studentID
+                    studentID: 0000+vehicle.studentID
                 }, function(err,createdVehicle){
                     if(err){
                         console.log("MongoDB Error When Creating: " + err);
