@@ -44,6 +44,10 @@ const vehicleInLotSchema = new Schema ({
         time: 
         { type : Date,
          default: Date.now 
+        },
+        ticketed: 
+        { type : Boolean,
+         default: false 
         }
 
 })

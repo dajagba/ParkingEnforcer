@@ -7,12 +7,13 @@ import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
 export class DashboardComponent implements OnInit {
-  @ViewChild('acc') accordionComponent: NgbAccordion;
+
+
+  
   constructor() { }
-toggle(id:string): void {
-    this.accordionComponent.toggle(id);
-  }
+
   ngOnInit() {
   }
 
