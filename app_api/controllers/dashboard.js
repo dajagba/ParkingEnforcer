@@ -17,6 +17,7 @@ module.exports.getVehiclesInLot = function(req,res) {
 
 module.exports.deleteVehiclesInLot = function(req,res) {
         console.log("Deleting Vehicle");
+        console.log("Looking for and deleting ID: "+req.params.id);
         vehiclesInLot.findByIdAndRemove((req.params.id, function(err,deletedVehicle)
         {
             if(err)
