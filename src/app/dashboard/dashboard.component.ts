@@ -2,6 +2,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@angular/core';
 import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../data.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ AllStatus: any =[];
   
   constructor(private dataService: DataService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.dataService.LoadData().subscribe(result => {
       this.AllStatus = result;
       console.log(this.AllStatus); 
