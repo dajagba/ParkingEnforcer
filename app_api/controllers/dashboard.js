@@ -15,14 +15,14 @@ module.exports.getVehiclesInLot = function (req, res) {
     });
 };
 
-module.exports.getVehiclesInLotByLot = function(req,res){
-    debug.log("Looking for vehicles that match lot: " + req.params.lot);
+module.exports.getVehiclesInLotByLot = function(req,res,next){
+    console.log("Looking for vehicles that match lot: " + req.params.lot);
     vehiclesInLot.find({lotName: req.params.lot}, function(err, vehiclesinlot){
         if(err){
-            debug.log("Mongoose Error: " + err);
+            console.log("Mongoose Error: " + err);
             res.send("Mongoose Error: " +err);
         }else{
-            debug.log("returning list of vehicles matching lot: " + req.params.lot);
+            console.log("returning list of vehicles matching lot: " + req.params.lot);
             res.send(vehiclesinlot);
         }
     });
