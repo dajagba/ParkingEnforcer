@@ -49,7 +49,7 @@ var vehiclesInLot = mongoose.model('vehiclesInLot');
 
 router.get('/vehiclesinlot',ctrlDash.getVehiclesInLot);
 
-router.delete('/vehiclesinlot',ctrlDash.deleteVehiclesInLot);
+router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot);
 
 //router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot)
 /*  router.delete('/vehiclesinlot/:id',function(req,res){
