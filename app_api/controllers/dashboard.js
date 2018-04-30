@@ -28,13 +28,13 @@ module.exports.deleteVehiclesInLot = function (req, res, next) {
 };
  
 module.exports.addVehiclesInLot = function (req, res, next) {
-    console.log("Validating Vehicle With Plate: " + req.plate + " In Lot: " + req.lot);
+    console.log("Validating Vehicle With Plate: " + req.params.plate + " In Lot: " + req.params.lot);
     //Before we add a plate to the lot, we check its validity
     //search registered vehicle table for a plate that matches the one just passed
 registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
     if(err){ //MongoDb error
         console.log("MongoDB Error: " + err);
-        return false; //callback?
+        res.send("MongoDB Error: " + err)
     }
     if(!vehicle){//if we don't find a match, set plate and lot and send to db
         console.log("No Match Found Plate Is Not Registered. Adding to DB...");
@@ -46,7 +46,7 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
             }, function(err,createdVehicle){
                 if(err){
                     console.log("MongoDB Error When Creating: " + err);
-                    return null; //callback?
+                    res.send("MongoDB ErrorWhen Creating: " + err)
                 }
             }
         );
@@ -65,7 +65,7 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                 }, function(err,createdVehicle){
                     if(err){
                         console.log("MongoDB Error When Creating: " + err);
-                        return null; //callback?
+                        res.send("MongoDB ErrorWhen Creating: " + err)
                     }
                 }
             );
@@ -82,7 +82,7 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                 }, function(err,createdVehicle){
                     if(err){
                         console.log("MongoDB Error When Creating: " + err);
-                        return null; //callback?
+                        res.send("MongoDB ErrorWhen Creating: " + err)
                     }
                 }
             );
