@@ -29,7 +29,7 @@ module.exports.deleteVehiclesInLot = function (req, res, next) {
  
 module.exports.addVehiclesInLot = function (req, res, next) {
     console.log("Validating Vehicle With Plate: " + req.plate + " In Lot: " + req.lot);
-
+    //Before we add a plate to the lot, we check its validity
     //search registered vehicle table for a plate that matches the one just passed
 registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
     if(err){ //MongoDb error

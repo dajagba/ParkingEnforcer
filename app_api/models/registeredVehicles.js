@@ -24,7 +24,9 @@ const registeredVehicleSchema = new Schema ({
         studentID:
         {
             type: Number,
-            required: true
+            required: true,
+            min: [8, 'Must be 8 digits long'],
+            max: [8, 'Must be 8 digits long']
         },
         firstName:
         {
