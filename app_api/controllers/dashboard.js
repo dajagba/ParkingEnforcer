@@ -15,7 +15,7 @@ module.exports.getVehiclesInLot = function (req, res) {
     });
 };
 
-module.exports.getVehiclesInLotByLot = function(req,res){
+module.exports.getVehiclesInLotByLot = function(req,res,next){
     debug.log("Looking for vehicles that match lot: " + req.params.lot);
     vehiclesInLot.find({lotName: req.params.lot}, function(err, vehiclesinlot){
         if(err){
