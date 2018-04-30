@@ -23,7 +23,7 @@
             <!-- Card body -->
             <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
                 <div class="card-body">
-                        <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" >
+                        <table datatable class="row-border hover" [dtOptions]="dtOptions2" [dtTrigger]="dtTrigger2" >
                                 <thead>
                                   <tr>
                                     <th>Plates</th>
@@ -101,7 +101,25 @@
             <!-- Card body -->
             <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordionEx">
                 <div class="card-body">
-
+                        <table datatable class="row-border hover" [dtOptions]="dtOptions3" [dtTrigger]="dtTrigger3" >
+                                <thead>
+                                  <tr>
+                                    <th>Plates</th>
+                                    <th>Time Entered</th>
+                                    <th>Registered</th>
+                                    <th>Ticketed</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let FacultyLotA of  FacultyLotA">
+                                    <td>{{ FacultyLotA.plate }}</td>
+                                    <td>{{ FacultyLotA.time }}</td>
+                                    <td>{{ FacultyLotA.registered }}</td>
+                                    <td>{{ FacultyLotA.ticketed }}</td>
+                                  </tr>
+                                  
+                                </tbody>
+                                </table>
                 </div>
             </div>
         </div>
@@ -124,7 +142,25 @@
                 <!-- Card body -->
                 <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordionEx">
                     <div class="card-body">
-    
+                            <table datatable class="row-border hover" [dtOptions]="dtOptions4" [dtTrigger]="dtTrigger4" >
+                                    <thead>
+                                      <tr>
+                                        <th>Plates</th>
+                                        <th>Time Entered</th>
+                                        <th>Registered</th>
+                                        <th>Ticketed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let CentralParkingLot of  CentralParkingLot">
+                                        <td>{{ CentralParkingLot.plate }}</td>
+                                        <td>{{ CentralParkingLot.time }}</td>
+                                        <td>{{ CentralParkingLot.registered }}</td>
+                                        <td>{{ CentralParkingLot.ticketed }}</td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                    </table>
                     </div>
                 </div>
             </div>
@@ -144,7 +180,25 @@
                 <!-- Card body -->
                 <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordionEx">
                     <div class="card-body">
-    
+                            <table datatable class="row-border hover" [dtOptions]="dtOptions5" [dtTrigger]="dtTrigger5" >
+                                    <thead>
+                                      <tr>
+                                        <th>Plates</th>
+                                        <th>Time Entered</th>
+                                        <th>Registered</th>
+                                        <th>Ticketed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let EastEconomy of  EastEconomy">
+                                        <td>{{ EastEconomy.plate }}</td>
+                                        <td>{{ EastEconomy.time }}</td>
+                                        <td>{{ EastEconomy.registered }}</td>
+                                        <td>{{ EastEconomy.ticketed }}</td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                    </table>
                     </div>
                 </div>
             </div>
@@ -164,7 +218,25 @@
                 <!-- Card body -->
                 <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordionEx">
                     <div class="card-body">
-    
+                            <table datatable class="row-border hover" [dtOptions]="dtOptions6" [dtTrigger]="dtTrigger6" >
+                                    <thead>
+                                      <tr>
+                                        <th>Plates</th>
+                                        <th>Time Entered</th>
+                                        <th>Registered</th>
+                                        <th>Ticketed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let ResidentParking of  ResidentParking">
+                                        <td>{{ ResidentParking.plate }}</td>
+                                        <td>{{ ResidentParking.time }}</td>
+                                        <td>{{ ResidentParking.registered }}</td>
+                                        <td>{{ ResidentParking.ticketed }}</td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                    </table>
                     </div>
                 </div>
             </div>
@@ -184,7 +256,25 @@
                 <!-- Card body -->
                 <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordionEx">
                     <div class="card-body">
-    
+                            <table datatable class="row-border hover" [dtOptions]="dtOptions7" [dtTrigger]="dtTrigger7" >
+                                    <thead>
+                                      <tr>
+                                        <th>Plates</th>
+                                        <th>Time Entered</th>
+                                        <th>Registered</th>
+                                        <th>Ticketed</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let  WestParking of WestParking">
+                                        <td>{{ WestParking.plate }}</td>
+                                        <td>{{ WestParking.time }}</td>
+                                        <td>{{ WestParking.registered }}</td>
+                                        <td>{{ WestParking.ticketed }}</td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                    </table>
                     </div>
                 </div>
             </div>

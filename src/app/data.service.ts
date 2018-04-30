@@ -11,41 +11,41 @@ export class DataService {
   constructor(private http : HttpClient) { }
 LoadDataForWestDeck(){
   /** Uncommment for local */
-  const url = '/api/vehiclesinlot/:west%20deck';
+  const url = '/api/vehiclesinlot/West%20Deck';
   return this.http.get(url);
 }
 
 LoadDataForCentralDeck()
 {
-  const url = '/api/vehiclesinlot/:central%20deck';
+  const url = '/api/vehiclesinlot/Central%20Deck';
   return this.http.get(url);
 }
 
 LoadDataForFacultyLotA()
 {
-  const url = '/api/vehiclesinlot/:faculty%20lot%20a';
+  const url = '/api/vehiclesinlot/Faculty%20A';
   return this.http.get(url);
 }
 
 LoadDataForCentralParkingLot()
 {
-  const url = '/api/vehiclesinlot/:central%20parking%20lot';
+  const url = '/api/vehiclesinlot/Central%20Parking';
   return this.http.get(url);
 }
 
 LoadDataForEastEconomy()
 {
-  const url = '/api/vehiclesinlot/:east%20economy';
+  const url = '/api/vehiclesinlot/East%20Economy';
   return this.http.get(url);
 }
 
 LoadDataForResidentParking()
-{  const url = '/api/vehiclesinlot/:resident%20parking';
+{  const url = '/api/vehiclesinlot/Resident%20Parking';
 return this.http.get(url);}
 
 LoadDataForWestParking()
 {
-  const url = '/api/vehiclesinlot/:west%20parking';
+  const url = '/api/vehiclesinlot/West%20Parking';
   return this.http.get(url);
 }
 } 
