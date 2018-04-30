@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@an
 import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../data.service';
 import 'rxjs/add/operator/map';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,13 +14,20 @@ import 'rxjs/add/operator/map';
 export class DashboardComponent implements OnInit {
 
 AllStatus: any =[]; 
-  
+dtOptions: DataTables.Settings = {};
+dtTrigger: Subject<any> = new Subject();
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10
+    };
+
     this.dataService.LoadData().subscribe(result => {
       this.AllStatus = result;
-      console.log(this.AllStatus); 
+      this.dtTrigger.next();
     });
   }
 
