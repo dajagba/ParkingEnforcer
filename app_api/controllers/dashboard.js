@@ -8,13 +8,28 @@ var registeredVehicles = mongoose.model('registeredVehicles');
 /*** Vehicles in lot API 
  * Get and Remove from lot
  */
+//gets a list of vehicles in all lots
 module.exports.getVehiclesInLot = function (req, res) {
     vehiclesInLot.find(function (err, vehiclesinlot) {
         res.send(vehiclesinlot);
     });
 };
 
+module.exports.getVehiclesInLotByLot = function(req,res){
+    debug.log("Looking for vehicles that match lot: " + req.params.lot);
+    vehiclesInLot.find({lotName: req.params.lot}, function(err, vehiclesinlot){
+        if(err){
+            debug.log("Mongoose Error: " + err);
+            res.send("Mongoose Error: " +err);
+        }else{
+            debug.log("returning list of vehicles matching lot: " + req.params.lot);
+            res.send(vehiclesinlot);
+        }
+    });
 
+};
+
+//deletes a vehicle in the lot by id
 module.exports.deleteVehiclesInLot = function (req, res, next) {
     console.log("Deleting Vehicle");
     vehiclesInLot.findByIdAndRemove(req.params.id, function (err, deletedVehicle) {
@@ -26,7 +41,8 @@ module.exports.deleteVehiclesInLot = function (req, res, next) {
         }
     })
 };
- 
+
+//Method for adding vehicle to a lot. Requires a plate and lot name to be sent
 module.exports.addVehiclesInLot = function (req, res, next) {
     console.log("Validating Vehicle With Plate: " + req.params.plate + " In Lot: " + req.params.lot);
     //Before we add a plate to the lot, we check its validity
