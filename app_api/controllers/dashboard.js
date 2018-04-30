@@ -20,6 +20,7 @@ module.exports.getVehiclesInLotByLot = function(req,res){
     vehiclesInLot.find({lotName: req.params.lot}, function(err, vehiclesinlot){
         if(err){
             debug.log("Mongoose Error: " + err);
+            res.send("Mongoose Error: " +err);
         }else{
             debug.log("returning list of vehicles matching lot: " + req.params.lot);
             res.send(vehiclesinlot);
