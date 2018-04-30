@@ -57,7 +57,7 @@ var vehiclesInLot = mongoose.model('vehiclesInLot');
 //Get of list of all vehicles in all lots
 router.get('/vehiclesinlot',ctrlDash.getVehiclesInLot);
 //Get a list of all vehicles in a specific lot
-//router.get('/vehiclesinlot/:lot',ctrlDash.getVehiclesInLotByLot);
+router.get('/vehiclesinlot/:lot',ctrlDash.getVehiclesInLotByLot);
 
 //delete a vehicle in lot by _id
 router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot);
