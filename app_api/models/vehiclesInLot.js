@@ -1,3 +1,5 @@
+//import { Timestamp } from 'rxjs';
+
 const mongoose = require('mongoose')
 
 
@@ -38,7 +40,12 @@ const vehicleInLotSchema = new Schema ({
         {
             type:Boolean,
             default: false
+        },
+        time: 
+        { type : Date,
+         default: Date.now 
         }
+
 })
 
 mongoose.model('vehiclesInLot', vehicleInLotSchema,'vehiclesInLot');
