@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var vehiclesInLot = mongoose.model('vehiclesInLot');
+//const vehiclesInLot = require('../models/vehiclesInLot.js');
 
 
 
@@ -27,4 +28,3 @@ module.exports.deleteVehiclesInLot = function(req,res) {
             }
         }))
     };
-  
