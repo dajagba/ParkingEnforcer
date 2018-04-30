@@ -26,45 +26,75 @@ module.exports.deleteVehiclesInLot = function (req, res, next) {
         }
     })
 };
+ 
+module.exports.addVehiclesInLot = function (req, res, next) {
+    console.log("Validating Vehicle With Plate: " + req.plate + " In Lot: " + req.lot);
 
-/* module.exports.addVehiclesInLot = function (req, res, next) {
-    console.log("Adding Vehicle With Plate: " + req.plate + " In Lot: " + req.lot);
-    registeredVehicles.findOne({'plate': req.params.plate}, function (err, validVehicle) {
-        if(err){
-            res.send("Error Finding Vehicle")
-        }
-        else{
-            //its an unknown plate altogether
-            if(validVehicle.plate == null){
-                console.log("Found Unknown Vehicle. Adding to db...")
-                var newVehicle = {
-                    plate: req.params.plate,
-                    lotname: req.params.lot,
-                    registered: false
-                }
-            }else if(validVehicle.lotName != req.params.lot){ //It is registered but parked in wrong lot
-                console.log("Found Vehicle in wrong lot. Adding to db...")
-                var newVehicle = {
-                    plate: req.params.plate,
-                    lotname: req.params.lot,
-                    registered: false,
-                    make: validVehicle.make,
-                    model: validVehicle.model,
-                    studentID: validVehicle.studentID
-                }
-            }else{ //it is registered and in correct lot
-                console.log("Found Registered Vehicle. Adding to db...")
-                var newVehicle = {
-                    plate: req.params.plate,
-                    lotname: req.params.lot,
-                    registered: true,
-                    make: validVehicle.make,
-                    model: validVehicle.model,
-                    studentID: validVehicle.studentID
+    //search registered vehicle table for a plate that matches the one just passed
+registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
+    if(err){ //MongoDb error
+        console.log("MongoDB Error: " + err);
+        return false; //callback?
+    }
+    if(!vehicle){//if we don't find a match, set plate and lot and send to db
+        console.log("No Match Found Plate Is Not Registered. Adding to DB...");
+        vehiclesInLot.create(
+            {
+                registered: false,
+                plate: req.params.plate,
+                lotName: req.params.lot
+            }, function(err,createdVehicle){
+                if(err){
+                    console.log("MongoDB Error When Creating: " + err);
+                    return null; //callback?
                 }
             }
+        );
+    }
+    else{ //if we find a match, verify it is in the correct lot
+        if(req.params.lot != vehicle.lotName){//if it isn't, add relavent metadata, set as invalid and send to db
+            console.log("Registered Vehicle, Wrong Lot Name. adding to DB...");
+            vehiclesInLot.create(
+                {
+                    registered: false,
+                    plate: req.params.plate,
+                    lotName: req.params.lot,
+                    make: vehicle.make,
+                    model: vehicle.model,
+                    studentID: vehicle.studentID
+                }, function(err,createdVehicle){
+                    if(err){
+                        console.log("MongoDB Error When Creating: " + err);
+                        return null; //callback?
+                    }
+                }
+            );
+        }else{//if it is, add relavent metadata, set as valid and send to db
+            console.log("Registered Vehicle, Correct Lot Name. adding to DB...");
+            vehiclesInLot.create(
+                {
+                    registered: true,
+                    plate: req.params.plate,
+                    lotName: req.params.lot,
+                    make: vehicle.make,
+                    model: vehicle.model,
+                    studentID: vehicle.studentID
+                }, function(err,createdVehicle){
+                    if(err){
+                        console.log("MongoDB Error When Creating: " + err);
+                        return null; //callback?
+                    }
+                }
+            );
+        };
+    };
+});
+        
 
-            vehiclesInLot.insert(newVehicle);
-        }
-    });
-}; */
+            
+
+            
+        
+        
+    
+};

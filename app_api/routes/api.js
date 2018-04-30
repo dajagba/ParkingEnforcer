@@ -54,20 +54,15 @@ router.post('/login', ctrlAuth.login);
 /***** For Dashboard */
 var vehiclesInLot = mongoose.model('vehiclesInLot');
 
-//Get of list of all vehicles in lot
+//Get of list of all vehicles in all lots
 router.get('/vehiclesinlot',ctrlDash.getVehiclesInLot);
-//Get all vehicles in West Deck 
-//Get all vehicles in Central Deck
-//Get all vehicles in Faculty Lot A
-//Get all vehicles in Central Parking
-//Get all vehicles in East Economy
-//Get all vehicles in Resident Parking
-//Get all vehicles in West Parking
+//Get a list of all vehicles in a specific lot
+//router.get('/vehiclesinlot/:lot',ctrlDash.getVehiclesInLotByLot);
 
 //delete a vehicle in lot by _id
-router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot)
+router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot);
 
-/* //add a vehicle to the lot. Specifying plate and lot
-router.post('/vehiclesinlot/:plate-:lot',ctrlDash.addVehiclesInLot) */
+//add a vehicle to the lot. Specifying plate and lot
+router.post('/vehiclesinlot/:plate-:lot',ctrlDash.addVehiclesInLot);
 
 module.exports = router 

@@ -1,7 +1,7 @@
  const mongoose = require('mongoose')
 
 
-//creating a user schema 
+//creating a registered vehicles schema 
 const Schema = mongoose.Schema  
 
 
