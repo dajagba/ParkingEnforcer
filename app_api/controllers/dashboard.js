@@ -10,6 +10,7 @@ var registeredVehicles = mongoose.model('registeredVehicles');
  */
 module.exports.getVehiclesInLot = function (req, res) {
     vehiclesInLot.find(function (err, vehiclesinlot) {
+        res.setHeader('content-type', 'text/javascript');
         res.send(vehiclesinlot);
     });
 };
