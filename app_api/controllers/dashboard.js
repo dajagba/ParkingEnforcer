@@ -14,6 +14,18 @@ module.exports.getVehiclesInLot = function (req, res) {
     });
 };
 
+module.exports.getVehiclesInLotWestDeck = function (req, res, next) {
+    console.log("Getting Vehicles in West Deck");
+
+    vehiclesInLot.find({lotName:'WestDeck'}, function (err, westDeckVehicles) {
+        if (err) {
+            res.send("Problem finding west deck vehicles")
+        }
+        else {
+            res.json(westDeckVehicles);
+        }
+    })
+};
 
 module.exports.deleteVehiclesInLot = function (req, res, next) {
     console.log("Deleting Vehicle");
