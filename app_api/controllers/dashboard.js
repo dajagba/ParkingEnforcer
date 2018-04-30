@@ -25,6 +25,7 @@ module.exports.getVehiclesInLotByLot = function(req,res){
             res.send(vehiclesinlot);
         }
     });
+
 };
 
 //deletes a vehicle in the lot by id
