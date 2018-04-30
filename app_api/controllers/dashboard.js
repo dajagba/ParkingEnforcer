@@ -15,9 +15,9 @@ module.exports.getVehiclesInLot = function(req,res) {
      }; 
 
 
-module.exports.deleteVehiclesInLot = function(req,res) {
+module.exports.deleteVehiclesInLot = function(req, res, next) {
         console.log("Deleting Vehicle");
-        vehiclesInLot.findByIdAndRemove((req.params.id, function(err,deletedVehicle)
+        vehiclesInLot.findByIdAndRemove(req.params.id, function(err,deletedVehicle)
         {
             if(err)
             {
@@ -26,5 +26,5 @@ module.exports.deleteVehiclesInLot = function(req,res) {
             else {
                 res.json(deletedVehicle);
             }
-        }))
+        })
     };

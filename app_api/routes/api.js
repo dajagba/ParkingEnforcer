@@ -7,6 +7,14 @@ const vehiclesinlot = require('../models/vehiclesInLot')
 var mongoose = require('mongoose');
 
 
+//To accept params
+router.use('/:id(\\d+)(/*)?', (req, res, next) => { 
+  console.log(req.params); // { '0': undefined, '1': undefined, projId: '1337' }
+
+  next();
+});
+
+
 //To ensure only registered users are able to access the dashboard 
 var jwt = require('express-jwt');
 var auth = jwt({
@@ -49,7 +57,7 @@ var vehiclesInLot = mongoose.model('vehiclesInLot');
 
 router.get('/vehiclesinlot',ctrlDash.getVehiclesInLot);
 
-//router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot)
+router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot)
 /*  router.delete('/vehiclesinlot/:id',function(req,res){
    var id = req.params.id
    getVehiclesInLot.findOneAndRemove({_id: id}, function(err)
