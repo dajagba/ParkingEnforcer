@@ -54,35 +54,11 @@ router.post('/login', ctrlAuth.login);
 /***** For Dashboard */
 var vehiclesInLot = mongoose.model('vehiclesInLot');
 
-
+//Get a list of vehicles in lot
 router.get('/vehiclesinlot',ctrlDash.getVehiclesInLot);
-
+//delete a vehicle in lot by _id
 router.delete('/vehiclesinlot/:id',ctrlDash.deleteVehiclesInLot)
-/*  router.delete('/vehiclesinlot/:id',function(req,res){
-   var id = req.params.id
-   getVehiclesInLot.findOneAndRemove({_id: id}, function(err)
-  {
-    if (err)
-    {
-      return console.log(err);
-      return res.status(500).send();
-    }
-    return res.status(200).send(); 
-  });
-}); */
- 
-/* 
-router.route('/vehiclesinlot/:id')
-
-.delete(function(req, res) {
-  vehiclesinlot.remove({
-      _id: req.params.id
-  }, function(err, vehiclesinlot) {
-      if (err)
-          res.send(err);
-
-      res.json({ message: 'Successfully deleted' });
-  });
-}); */
+//add a vehicle to the lot. Specifying plate and lot
+router.post('/vehiclesinlot/:plate-:lot',ctrlDash.addVehiclesInLot)
 
 module.exports = router 
