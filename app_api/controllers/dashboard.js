@@ -47,6 +47,9 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                 if(err){
                     console.log("MongoDB Error When Creating: " + err);
                     res.send("MongoDB ErrorWhen Creating: " + err)
+                }else{
+                    console.log("Success Added Vehicle to DB");
+                    res.send(200,"vehicle added todb");
                 }
             }
         );
@@ -66,6 +69,9 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                     if(err){
                         console.log("MongoDB Error When Creating: " + err);
                         res.send("MongoDB ErrorWhen Creating: " + err)
+                    }else{
+                        console.log("Success Added Vehicle to DB");
+                        res.send(200,"vehicle added todb");
                     }
                 }
             );
@@ -83,6 +89,9 @@ registeredVehicles.findOne({plate:req.params.plate},function(err,vehicle){
                     if(err){
                         console.log("MongoDB Error When Creating: " + err);
                         res.send("MongoDB ErrorWhen Creating: " + err)
+                    }else{
+                        console.log("Success Added Vehicle to DB");
+                        res.send(200,"vehicle added todb");
                     }
                 }
             );
