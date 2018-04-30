@@ -33,11 +33,11 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr *ngFor="let status of AllStatus">
-                                    <td>{{ status.plate }}</td>
-                                    <td>{{ status.time }}</td>
-                                    <td>{{ status.registered }}</td>
-                                    <td>{{ status.ticketed }}</td>
+                                  <tr *ngFor="let WestDeck of WestDeck">
+                                    <td>{{ WestDeck.plate }}</td>
+                                    <td>{{ WestDeck.time }}</td>
+                                    <td>{{ WestDeck.registered }}</td>
+                                    <td>{{ WestDeck.ticketed }}</td>
                                   </tr>
                                   
                                 </tbody>
@@ -62,7 +62,25 @@
             <!-- Card body -->
             <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx">
                 <div class="card-body">
-
+                        <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" >
+                                <thead>
+                                  <tr>
+                                    <th>Plates</th>
+                                    <th>Time Entered</th>
+                                    <th>Registered</th>
+                                    <th>Ticketed</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let CentralDeck of CentralDeck">
+                                    <td>{{ CentralDeck.plate }}</td>
+                                    <td>{{ CentralDeck.time }}</td>
+                                    <td>{{ CentralDeck.registered }}</td>
+                                    <td>{{ CentralDeck.ticketed }}</td>
+                                  </tr>
+                                  
+                                </tbody>
+                                </table>
                 </div>
             </div>
         </div>

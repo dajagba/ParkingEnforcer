@@ -13,7 +13,8 @@ import { Subject } from 'rxjs/Subject';
 
 export class DashboardComponent implements OnInit {
 
-AllStatus: any =[]; 
+WestDeck: any =[]; 
+CentralDeck: any =[]; 
 dtOptions: DataTables.Settings = {};
 dtTrigger: Subject<any> = new Subject();
 
@@ -25,8 +26,13 @@ dtTrigger: Subject<any> = new Subject();
       pageLength: 10
     };
 
-    this.dataService.LoadData().subscribe(result => {
-      this.AllStatus = result;
+    this.dataService.LoadDataForWestDeck().subscribe(result => {
+      this.WestDeck = result;
+      this.dtTrigger.next();
+    });
+
+    this.dataService.LoadDataForCentralDeck().subscribe(result => {
+      this.CentralDeck = result;
       this.dtTrigger.next();
     });
   }
