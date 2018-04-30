@@ -7,7 +7,7 @@ var jwt = require('jsonwebtoken');
 const Schema = mongoose.Schema  
 const userSchema = new Schema ({
     username:
-    {
+    {   
         type: String, 
         unique: true, 
         required: true
@@ -25,7 +25,9 @@ const userSchema = new Schema ({
     studentID:
     {
         type: Number,
-        required: true
+        required: true,
+        min: [8, 'Must be 8 digits long'],
+        max: [8, 'Must be 8 digits long']
     },
     role: 
     {
