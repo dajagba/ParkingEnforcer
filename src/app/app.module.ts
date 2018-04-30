@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
@@ -27,7 +29,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     DashboardComponent,
     RegisterComponent,
     ProfileComponent,
-    AboutusComponent
+    AboutusComponent,
+
   ],
   imports: [
     BrowserModule,

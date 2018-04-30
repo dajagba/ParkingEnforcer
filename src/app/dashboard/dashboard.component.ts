@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@angular/core';
+import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  isCollapsed = false;
+  @ViewChild('acc') accordionComponent: NgbAccordion;
   constructor() { }
-
+toggle(id:string): void {
+    this.accordionComponent.toggle(id);
+  }
   ngOnInit() {
   }
 

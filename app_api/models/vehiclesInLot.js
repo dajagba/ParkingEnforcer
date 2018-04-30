@@ -20,17 +20,19 @@ const vehicleInLotSchema = new Schema ({
         make:
         {
             type: String,
-            required: true
+            
         },
         model:
         {
             type: String,
-            required: true
+            
         },
         studentID:
         {
-            type: String,
-            required: true
+            type: Number,
+            min: [8, 'Must be 8 digits long'],
+            max: [8, 'Must be 8 digits long']
+           
         },
         registered:
         {
