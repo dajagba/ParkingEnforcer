@@ -31,8 +31,8 @@
             </div>
             <div class="form-group">
                 <label for="studentID">KSU ID</label>
-                <h1 ng-if="!register.studentID.$valid">Please Input a Valid ID</h1>
                 <input type="number" name="studentID"class="form-control" name="studentID" placeholder="Enter your KSUID" [(ngModel)]="credentials.studentID" ng-maxlength="8" ng-minlength="8">
+                <h4 class="text-danger" ng-if="!register.studentID.$valid">Please Input a Valid ID</h4>
               </div>
 
             <button type="submit" class="btn btn-success btn-block" >Register!</button>
