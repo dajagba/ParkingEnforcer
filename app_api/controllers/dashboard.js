@@ -27,7 +27,7 @@ module.exports.deleteVehiclesInLot = function (req, res, next) {
     })
 };
 
-module.exports.addVehiclesInLot = function (req, res, next) {
+/* module.exports.addVehiclesInLot = function (req, res, next) {
     console.log("Adding Vehicle With Plate: " + req.plate + " In Lot: " + req.lot);
     registeredVehicles.findOne({'plate': req.params.plate}, function (err, validVehicle) {
         if(err){
@@ -67,4 +67,4 @@ module.exports.addVehiclesInLot = function (req, res, next) {
             vehiclesInLot.insert(newVehicle);
         }
     });
-};
+}; */

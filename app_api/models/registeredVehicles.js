@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+/* const mongoose = require('mongoose')
 
 
 //creating a user schema 
@@ -43,4 +43,4 @@ const registeredVehicleSchema = new Schema ({
         }
 })
 
-mongoose.model('registeredVehicles', registeredVehicleSchema,'registeredVehicles');
+mongoose.model('registeredVehicles', registeredVehicleSchema,'registeredVehicles'); */
