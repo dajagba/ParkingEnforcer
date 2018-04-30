@@ -31,9 +31,7 @@ const vehicleInLotSchema = new Schema ({
         },
         studentID:
         {
-            type: Number,
-            min: [8, 'Must be 8 digits long'],
-            max: [8, 'Must be 8 digits long']
+            type: Number
            
         },
         registered:
