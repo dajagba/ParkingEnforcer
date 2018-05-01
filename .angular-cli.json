@@ -41,6 +41,7 @@
         "../node_modules/datatables.net-buttons/js/buttons.flash.js",
         "../node_modules/datatables.net-buttons/js/buttons.html5.js",
         "../node_modules/datatables.net-buttons/js/buttons.print.js"
+      
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

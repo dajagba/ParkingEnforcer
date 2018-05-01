@@ -5,6 +5,8 @@ import { DataService } from '../data.service';
 import { DataTableDirective } from 'angular-datatables';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
+import * as $ from 'jquery';
+import 'datatables.net';
 
 @Component({
   selector: 'app-dashboard',
@@ -48,10 +50,18 @@ dtTrigger7: Subject<any> = new Subject();
       select: true,
       dom: 'Bfrtip',
       buttons: [
-        'colvis',
         'copy',
         'print',
-
+        {
+          text: 'View More Info',
+          action: function () {
+        
+            var index = $('#westdeck').DataTable().rows( { selected: true }).indexes()
+            var data = $('#westdeck').DataTable().row(index).data(); 
+             console.log(data) 
+          }
+          
+        }
       ],
    
      
@@ -68,10 +78,17 @@ dtTrigger7: Subject<any> = new Subject();
       select: true,
       dom: 'Bfrtip',
       buttons: [
-        'colvis',
         'copy',
         'print',
-
+        {
+          text: 'View More Info',
+          action: function () {
+     
+            var index = $('#CentralDeck').DataTable().rows( { selected: true }).indexes()
+            var data = $('#CentralDeck').DataTable().row(index).data(); 
+             console.log(data) 
+          }
+        }
       ],
 
     };
@@ -87,10 +104,17 @@ dtTrigger7: Subject<any> = new Subject();
       select: true,
       dom: 'Bfrtip',
       buttons: [
-        'colvis',
         'copy',
         'print',
-
+        {
+          text: 'View More Info',
+          action: function () {
+      
+            var index = $('#FacultyLotA').DataTable().rows( { selected: true }).indexes()
+            var data = $('#FacultyLotA').DataTable().row(index).data(); 
+             console.log(data) 
+          }
+        }
       ],
 
     };
@@ -105,10 +129,17 @@ dtTrigger7: Subject<any> = new Subject();
       select: true,
       dom: 'Bfrtip',
       buttons: [
-        'colvis',
         'copy',
-        'print'
-
+        'print',
+        {
+          text: 'View More Info',
+          action: function () {
+          
+            var index = $('#CentralParkingLot').DataTable().rows( { selected: true }).indexes()
+            var data = $('#CentralParkingLot').DataTable().row(index).data(); 
+             console.log(data) 
+          }
+        }
       ],
 
     };
@@ -123,10 +154,17 @@ dtTrigger7: Subject<any> = new Subject();
       select: true,
       dom: 'Bfrtip',
       buttons: [
-        'colvis',
         'copy',
-        'print'
-
+        'print',
+        {
+          text: 'View More Info',
+          action: function () {
+             
+           var index = $('#EastEconomy').DataTable().rows( { selected: true }).indexes()
+           var data = $('#EastEconomy').DataTable().row(index).data(); 
+            console.log(data) 
+          }
+        }
       ],
 
     };
@@ -142,10 +180,17 @@ dtTrigger7: Subject<any> = new Subject();
       select: true,
       dom: 'Bfrtip',
       buttons: [
-        'colvis',
         'copy',
-        'print'
-
+        'print',
+        {
+          text: 'View More Info',
+          action: function () {
+            
+            var index = $('#ResidentParking').DataTable().rows( { selected: true }).indexes()
+            var data = $('#ResidentParking').DataTable().row(index).data(); 
+             console.log(data) 
+          }
+        }
       ],
 
     };
@@ -153,28 +198,56 @@ dtTrigger7: Subject<any> = new Subject();
       this.ResidentParking = result;
       this.dtTrigger6.next();
     });
-  
-  
+    
+
+      
     this.dtOptions7 = {
+      
+      
+      
       pagingType: 'full_numbers',
       pageLength: 10,
-      select: true, 
+      responsive: true,
+      select: 'single',
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
-        'colvis',
-        'copy',
-        'print'
         
+        'copy',
+        'print',
+        
+        {
+        datatoggle: '#myModal',
+          text: 'View More Info',
+          action: function () {
+            
+            
+           var index = $('#westparking').DataTable().rows( { selected: true }).indexes()
+           var data = $('#westparking').DataTable().row(index).data(); 
+            console.log(data)  
+            
+            
+
+          }
+        }
       ],
 
     };
+
+
+
     this.dataService.LoadDataForWestParking().subscribe(result => {
       this.WestParking = result;
       this.dtTrigger7.next();
     });
   
-  
-  
+
   
   
   

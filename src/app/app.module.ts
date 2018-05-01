@@ -21,6 +21,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DataTablesModule } from 'angular-datatables';
 import { DataService } from './data.service';
+import * as $ from 'jquery';
+import 'datatables.net';
+
+
 
 @NgModule({
   declarations: [
