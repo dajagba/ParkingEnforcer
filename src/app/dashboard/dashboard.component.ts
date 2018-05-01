@@ -49,16 +49,25 @@ dtTrigger7: Subject<any> = new Subject();
       pageLength: 10,
       select: true,
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
         'copy',
         'print',
+        'colvis',
         {
           text: 'View More Info',
           action: function () {
-        
-            var index = $('#westdeck').DataTable().rows( { selected: true }).indexes()
+            /*
+            var index = $('#westdeck').DataTable().rows( { selected: true }).indexes();
             var data = $('#westdeck').DataTable().row(index).data(); 
-             console.log(data) 
+             console.log(data);
+             */
           }
           
         }
@@ -77,16 +86,25 @@ dtTrigger7: Subject<any> = new Subject();
       pageLength: 10,
       select: true,
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
         'copy',
         'print',
+        'colvis',
         {
           text: 'View More Info',
           action: function () {
-     
-            var index = $('#CentralDeck').DataTable().rows( { selected: true }).indexes()
+            /*
+            var index = $('#CentralDeck').DataTable().rows( { selected: true }).indexes();
             var data = $('#CentralDeck').DataTable().row(index).data(); 
-             console.log(data) 
+             console.log(data);
+             */
           }
         }
       ],
@@ -103,16 +121,25 @@ dtTrigger7: Subject<any> = new Subject();
       pageLength: 10,
       select: true,
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
         'copy',
         'print',
+        'colvis',
         {
           text: 'View More Info',
           action: function () {
-      
-            var index = $('#FacultyLotA').DataTable().rows( { selected: true }).indexes()
+      /*
+            var index = $('#FacultyLotA').DataTable().rows( { selected: true }).indexes();
             var data = $('#FacultyLotA').DataTable().row(index).data(); 
-             console.log(data) 
+             console.log(data); 
+             */
           }
         }
       ],
@@ -128,16 +155,25 @@ dtTrigger7: Subject<any> = new Subject();
       pageLength: 10,
       select: true,
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
         'copy',
         'print',
+        'colvis',
         {
           text: 'View More Info',
           action: function () {
-          
-            var index = $('#CentralParkingLot').DataTable().rows( { selected: true }).indexes()
+          /*
+            var index = $('#CentralParkingLot').DataTable().rows( { selected: true }).indexes();
             var data = $('#CentralParkingLot').DataTable().row(index).data(); 
-             console.log(data) 
+             console.log(data); 
+             */
           }
         }
       ],
@@ -153,16 +189,25 @@ dtTrigger7: Subject<any> = new Subject();
       pageLength: 10,
       select: true,
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
         'copy',
         'print',
+        'colvis',
         {
           text: 'View More Info',
           action: function () {
-             
-           var index = $('#EastEconomy').DataTable().rows( { selected: true }).indexes()
+             /*
+           var index = $('#EastEconomy').DataTable().rows( { selected: true }).indexes();
            var data = $('#EastEconomy').DataTable().row(index).data(); 
             console.log(data) 
+            */
           }
         }
       ],
@@ -179,16 +224,25 @@ dtTrigger7: Subject<any> = new Subject();
       pageLength: 10,
       select: true,
       dom: 'Bfrtip',
+      "columnDefs": [
+        { "visible": false, "searchable":false, "orderable": false, "targets": 4  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false,"targets": 5  }
+        ,
+        { "visible": false, "searchable":false, "orderable": false, "targets": 6  }
+      ],
       buttons: [
         'copy',
         'print',
+        'colvis',
         {
           text: 'View More Info',
           action: function () {
-            
-            var index = $('#ResidentParking').DataTable().rows( { selected: true }).indexes()
+            /*
+            var index = $('#ResidentParking').DataTable().rows( { selected: true }).indexes();
             var data = $('#ResidentParking').DataTable().row(index).data(); 
-             console.log(data) 
+             console.log(data); 
+             */
           }
         }
       ],
@@ -221,18 +275,19 @@ dtTrigger7: Subject<any> = new Subject();
         
         'copy',
         'print',
+        'colvis',
         
         {
         datatoggle: '#myModal',
           text: 'View More Info',
           action: function () {
+            /*
             
-            
-           var index = $('#westparking').DataTable().rows( { selected: true }).indexes()
+           var index = $('#westparking').DataTable().rows( { selected: true }).indexes();
            var data = $('#westparking').DataTable().row(index).data(); 
-            console.log(data)  
+            console.log(data);  
             
-            
+            */
 
           }
         }
