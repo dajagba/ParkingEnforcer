@@ -1,7 +1,8 @@
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, OnInit, ElementRef,AfterViewInit } from '@angular/core';
 import {NgbAccordion} from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../data.service';
+import { DataTableDirective } from 'angular-datatables';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 
@@ -12,7 +13,8 @@ import { Subject } from 'rxjs/Subject';
 })
 
 export class DashboardComponent implements OnInit {
-
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
 WestDeck: any =[]; 
 CentralDeck: any =[]; 
 FacultyLotA: any =[]; 
@@ -22,19 +24,19 @@ ResidentParking: any =[];
 WestParking: any =[]; 
 
 
-dtOptions: DataTables.Settings = {};
+dtOptions: any = {};
 dtTrigger: Subject<any> = new Subject();
-dtOptions2: DataTables.Settings = {};
+dtOptions2: any = {};
 dtTrigger2: Subject<any> = new Subject();
-dtOptions3: DataTables.Settings = {};
+dtOptions3: any = {};
 dtTrigger3: Subject<any> = new Subject();
-dtOptions4: DataTables.Settings = {};
+dtOptions4: any = {};
 dtTrigger4: Subject<any> = new Subject();
-dtOptions5: DataTables.Settings = {};
+dtOptions5: any = {};
 dtTrigger5: Subject<any> = new Subject();
-dtOptions6: DataTables.Settings = {};
+dtOptions6: any = {};
 dtTrigger6: Subject<any> = new Subject();
-dtOptions7: DataTables.Settings = {};
+dtOptions7: any = {};
 dtTrigger7: Subject<any> = new Subject();
 
   constructor(private dataService: DataService) { }
@@ -42,7 +44,17 @@ dtTrigger7: Subject<any> = new Subject();
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print',
+
+      ],
+   
+     
     };
 
     this.dataService.LoadDataForWestDeck().subscribe(result => {
@@ -52,7 +64,16 @@ dtTrigger7: Subject<any> = new Subject();
 
     this.dtOptions2 = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print',
+
+      ],
+
     };
     this.dataService.LoadDataForCentralDeck().subscribe(result => {
       this.CentralDeck = result;
@@ -62,7 +83,16 @@ dtTrigger7: Subject<any> = new Subject();
   
     this.dtOptions3 = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print',
+
+      ],
+
     };
     this.dataService.LoadDataForFacultyLotA().subscribe(result => {
       this.FacultyLotA = result;
@@ -71,7 +101,16 @@ dtTrigger7: Subject<any> = new Subject();
   
     this.dtOptions4 = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print'
+
+      ],
+
     };
     this.dataService.LoadDataForCentralParkingLot().subscribe(result => {
       this.CentralParkingLot = result;
@@ -80,7 +119,16 @@ dtTrigger7: Subject<any> = new Subject();
     
     this.dtOptions5 = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print'
+
+      ],
+
     };
     this.dataService.LoadDataForEastEconomy().subscribe(result => {
       this.EastEconomy = result;
@@ -90,7 +138,16 @@ dtTrigger7: Subject<any> = new Subject();
   
     this.dtOptions6 = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true,
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print'
+
+      ],
+
     };
     this.dataService.LoadDataForResidentParking().subscribe(result => {
       this.ResidentParking = result;
@@ -100,7 +157,16 @@ dtTrigger7: Subject<any> = new Subject();
   
     this.dtOptions7 = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 10,
+      select: true, 
+      dom: 'Bfrtip',
+      buttons: [
+        'colvis',
+        'copy',
+        'print'
+        
+      ],
+
     };
     this.dataService.LoadDataForWestParking().subscribe(result => {
       this.WestParking = result;
@@ -115,5 +181,6 @@ dtTrigger7: Subject<any> = new Subject();
   
   
   }
+
 
 }

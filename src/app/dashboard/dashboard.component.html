@@ -3,6 +3,11 @@
             <div class="container">
                 <div class="row">
                     <h3 class="text-dark">Kennesaw Campus</h3>
+                    <div class="col-2 float-right ">
+                    <a href="/dashboard"> <button type="button" class="btn btn-primary waves-effect waves-light blue float-right btn-block">
+                            Refresh
+                          </button> </a>
+                    </div>
                     <div class="col-md-12">
                                         
 <!--Accordion wrapper-->
@@ -23,7 +28,8 @@
             <!-- Card body -->
             <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
                 <div class="card-body">
-                        <table datatable class="row-border hover" [dtOptions]="dtOptions2" [dtTrigger]="dtTrigger2" >
+                    
+                        <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" >
                                 <thead>
                                   <tr>
                                     <th>Plates</th>
@@ -62,7 +68,7 @@
             <!-- Card body -->
             <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx">
                 <div class="card-body">
-                        <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" >
+                        <table datatable class="row-border hover" [dtOptions]="dtOptions2" [dtTrigger]="dtTrigger2" >
                                 <thead>
                                   <tr>
                                     <th>Plates</th>
